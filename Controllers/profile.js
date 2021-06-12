@@ -82,10 +82,7 @@ const profilepic = async (req, res, db) => {
       require("fs").writeFileSync(
         "/app/static/" + username.trim() + ".png",
         base64Data,
-        "base64",
-        function (err) {
-          console.log(err);
-        }
+        "base64"
       );
       const result = await db.profile.count({
         userUsername: username,
@@ -97,6 +94,7 @@ const profilepic = async (req, res, db) => {
           bio: data.bio,
           userUsername: username,
         });
+        console.log(result);
       } else {
         const result = await db.profile.update(
           {
