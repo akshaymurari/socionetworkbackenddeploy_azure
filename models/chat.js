@@ -14,7 +14,8 @@ const chat = (sequelize,DataTypes) => {
         },
     },{
         updatedAt:false
-    })
+    }
+    )
 }
 
 module.exports = chat;

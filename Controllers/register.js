@@ -13,7 +13,7 @@ const register = async (req, res, db) => {
   data.password = await bcrypt.hash(data.password, 10);
   try {
     const result = {
-      username: data.username,
+      username: data.username.toLowerCase(),
       password: data.password,
       email: data.email,
     };
