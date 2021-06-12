@@ -80,7 +80,7 @@ const profilepic = async (req, res, db) => {
       console.log(__dirname)
       var base64Data = data.profilepic.replace(/^data:image\/png;base64,/, "");
       require("fs").writeFileSync(
-        __dirname+"/static/" + username.trim() + ".png",
+        process.env.Baseurl+"/static/" + username.trim() + ".png",
         base64Data,
         "base64",
         function (err) {
