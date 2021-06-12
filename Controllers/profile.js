@@ -85,7 +85,9 @@ const profilepic = async (req, res, db) => {
         "base64"
       );
       const result = await db.profile.count({
-        userUsername: username,
+        where:{
+          userUsername: username
+        }
       });
       console.log(result);
       if (result == 0) {
