@@ -79,7 +79,7 @@ const profilepic = async (req, res, db) => {
       const username = verify.username;
       var base64Data = data.profilepic.replace(/^data:image\/png;base64,/, "");
       require("fs").writeFileSync(
-        "./static/" + username.trim() + ".png",
+        "/static/" + username.trim() + ".png",
         base64Data,
         "base64",
         function (err) {
