@@ -101,7 +101,7 @@ const addposts = async (req,res,db) => {
             console.log(posts,"in 39");
             const postdata = posts.dataValues;
             require("fs").writeFileSync(
-                "./static/posts/" + user.username.trim() + postdata.id + ".png",
+                "/app/static/posts/" + user.username.trim() + postdata.id + ".png",
                 img,
                 "base64",
                 function (err) {
