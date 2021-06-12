@@ -23,13 +23,14 @@ module.exports = (sequelize,DataTypes) => {
         timestamps:true,
         createdAt:"createdat",
         updatedAt:"updatedat"
-    },
+    },{
         hooks : {
             beforeCreate: function(user){
                 user.username = user.username.toLowerCase();
                 return user;
             }
         }
+    }
     );
     return Users;
 }
