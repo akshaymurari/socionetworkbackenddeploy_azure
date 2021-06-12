@@ -77,9 +77,10 @@ const profilepic = async (req, res, db) => {
     if (require("./auth")(data.token)) {
       const verify = jwt.verify(data.token, process.env.secretkey);
       const username = verify.username;
+      console.log(__dirname)
       var base64Data = data.profilepic.replace(/^data:image\/png;base64,/, "");
       require("fs").writeFileSync(
-        "/static/" + username.trim() + ".png",
+        __dirname+"/static/" + username.trim() + ".png",
         base64Data,
         "base64",
         function (err) {
